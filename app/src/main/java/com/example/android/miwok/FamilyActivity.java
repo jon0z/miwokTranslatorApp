@@ -17,12 +17,35 @@ package com.example.android.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
 
+    protected ArrayList<Word> familyMembers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family);
+        setContentView(R.layout.word_list);
+
+        familyMembers = new ArrayList<>();
+        familyMembers.add(new Word("Father", "epe", R.drawable.family_father));
+        familyMembers.add(new Word("Mother", "eta", R.drawable.family_mother));
+        familyMembers.add(new Word("Son", "Angsi", R.drawable.family_son));
+        familyMembers.add(new Word("Daughter", "Tune", R.drawable.family_daughter));
+        familyMembers.add(new Word("Older Brother", "Taachi", R.drawable.family_older_brother));
+        familyMembers.add(new Word("Younger Brother", "Chalitti", R.drawable.family_younger_brother));
+        familyMembers.add(new Word("Older Sister", "Tete", R.drawable.family_older_sister));
+        familyMembers.add(new Word("Younger Sister", "Kolliti", R.drawable.family_younger_sister));
+        familyMembers.add(new Word("Grandmother", "Ama", R.drawable.family_grandmother));
+        familyMembers.add(new Word("Granfather", "Paapa", R.drawable.family_grandfather));
+
+        // Array adapter for numbers array
+        WordAdapter itemsAdapter = new WordAdapter(this, familyMembers);
+
+        // listView to display list of numbers
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
     }
 }

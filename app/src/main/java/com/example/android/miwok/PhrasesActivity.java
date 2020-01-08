@@ -17,12 +17,38 @@ package com.example.android.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 
-public class PhrasesActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class PhrasesActivity extends AppCompatActivity
+{
+
+    protected ArrayList<Word> phrases;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.word_list);
+
+        // Colors array
+        phrases = new ArrayList<>();
+        phrases.add(new Word("Where are you going?", "Minto wuksus"));
+        phrases.add(new Word("What is your name?", "Tinne oyaase'ne"));
+        phrases.add(new Word("My name is ...", "oyaaset ..."));
+        phrases.add(new Word("How are you feeling?", "michekses?"));
+        phrases.add(new Word("I am feeling good.", "kuchi achit"));
+        phrases.add(new Word("Are you coming?", "eenes'aa?"));
+        phrases.add(new Word("Yes, I am coming.", "hee'eenem"));
+        phrases.add(new Word("I'm coming.", "eenem"));
+        phrases.add(new Word("Let's go.", "yoowutis"));
+        phrases.add(new Word("Come here.", "enni'nem"));
+
+        // Array adapter for numbers array
+        WordAdapter itemsAdapter = new WordAdapter(this, phrases);
+
+        // listView to display list of numbers
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(itemsAdapter);
     }
 }

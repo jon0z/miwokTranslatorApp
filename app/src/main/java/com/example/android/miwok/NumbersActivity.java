@@ -17,36 +17,35 @@ package com.example.android.miwok;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
-    protected ArrayList<Word> numbersArr;
+    protected ArrayList<Word> numbers;
     private static final String TAG = NumbersActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.word_list);
 
         // numbers array
-        numbersArr = new ArrayList<>();
-        numbersArr.add(new Word("One", "Lutti"));
-        numbersArr.add(new Word("Two", "Otiiko"));
-        numbersArr.add(new Word("Three", "Tolookosu"));
-        numbersArr.add(new Word("Four", "Oyyisa"));
-        numbersArr.add(new Word("Five", "Massokka"));
-        numbersArr.add(new Word("Six", "Temmokka"));
-        numbersArr.add(new Word("Seven", "Kenekaku"));
-        numbersArr.add(new Word("Eight", "Kawinta"));
-        numbersArr.add(new Word("Nine", "Wo'e"));
-        numbersArr.add(new Word("Ten", "Na'aacha"));
+        numbers = new ArrayList<>();
+        numbers.add(new Word("One", "Lutti", R.drawable.number_one));
+        numbers.add(new Word("Two", "Otiiko", R.drawable.number_two));
+        numbers.add(new Word("Three", "Tolookosu", R.drawable.number_three));
+        numbers.add(new Word("Four", "Oyyisa", R.drawable.number_four));
+        numbers.add(new Word("Five", "Massokka", R.drawable.number_five));
+        numbers.add(new Word("Six", "Temmokka", R.drawable.number_six));
+        numbers.add(new Word("Seven", "Kenekaku", R.drawable.number_seven));
+        numbers.add(new Word("Eight", "Kawinta", R.drawable.number_eight));
+        numbers.add(new Word("Nine", "Wo'e", R.drawable.number_nine));
+        numbers.add(new Word("Ten", "Na'aacha", R.drawable.number_ten));
 
         // Array adapter for numbers array
-        WordAdapter itemsAdapter = new WordAdapter(this, numbersArr);
+        WordAdapter itemsAdapter = new WordAdapter(this, numbers);
 
         // listView to display list of numbers
         ListView listView = findViewById(R.id.list);

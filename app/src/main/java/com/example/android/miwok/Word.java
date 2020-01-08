@@ -9,11 +9,20 @@ public class Word
     // State variable
     private String mMiwokTranslation;
     private String mDefaultTranslation;
+    private int mImageResourceId;
 
     public Word(String defaultWord, String miwokTransalation)
     {
         mDefaultTranslation = defaultWord;
         mMiwokTranslation = miwokTransalation;
+
+    }
+
+    public Word(String defaultWord, String miwokTranslation, int imageResourceId)
+    {
+        mDefaultTranslation = defaultWord;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = imageResourceId;
 
     }
 
@@ -27,5 +36,10 @@ public class Word
     {
         return mDefaultTranslation;
 
+    }
+
+    public int getmImageResourceId()
+    {
+        return mImageResourceId;
     }
 }
