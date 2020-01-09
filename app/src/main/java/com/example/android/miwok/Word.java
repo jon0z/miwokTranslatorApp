@@ -9,7 +9,8 @@ public class Word
     // State variable
     private String mMiwokTranslation;
     private String mDefaultTranslation;
-    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_RESOURCE;
+    private static final int NO_IMAGE_RESOURCE = -1;
 
     public Word(String defaultWord, String miwokTransalation)
     {
@@ -41,5 +42,10 @@ public class Word
     public int getmImageResourceId()
     {
         return mImageResourceId;
+    }
+
+    public boolean hasImage()
+    {
+        return mImageResourceId != NO_IMAGE_RESOURCE;
     }
 }

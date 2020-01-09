@@ -45,7 +45,7 @@ public class PhrasesActivity extends AppCompatActivity
         phrases.add(new Word("Come here.", "enni'nem"));
 
         // Array adapter for numbers array
-        WordAdapter itemsAdapter = new WordAdapter(this, phrases);
+        WordAdapter itemsAdapter = new WordAdapter(this, phrases, R.color.category_phrases);
 
         // listView to display list of numbers
         ListView listView = findViewById(R.id.list);

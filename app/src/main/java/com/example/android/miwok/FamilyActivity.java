@@ -42,7 +42,7 @@ public class FamilyActivity extends AppCompatActivity {
         familyMembers.add(new Word("Granfather", "Paapa", R.drawable.family_grandfather));
 
         // Array adapter for numbers array
-        WordAdapter itemsAdapter = new WordAdapter(this, familyMembers);
+        WordAdapter itemsAdapter = new WordAdapter(this, familyMembers, R.color.category_family);
 
         // listView to display list of numbers
         ListView listView = findViewById(R.id.list);

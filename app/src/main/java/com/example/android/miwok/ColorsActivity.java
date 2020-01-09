@@ -43,7 +43,7 @@ public class ColorsActivity extends AppCompatActivity
         colors.add(new Word("Mustard Yellow", "Chiwiite", R.drawable.color_mustard_yellow));
 
         // Array adapter for numbers array
-        WordAdapter itemsAdapter = new WordAdapter(this, colors);
+        WordAdapter itemsAdapter = new WordAdapter(this, colors, R.color.category_colors);
 
         // listView to display list of numbers
         ListView listView = findViewById(R.id.list);
